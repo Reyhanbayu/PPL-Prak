@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CplDiktiController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\CplDiktiController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login',[LoginController::class,'index']);
 
 Route::get('/cpldikti',[CplDIktiController::class, 'indexDikti'])->name('cpldikti');
 
