@@ -18,6 +18,21 @@
               <div class="table-responsive">
                 <table class="table table-hover rounded">
                   <thead class="table-secondary">
+                    <form action="/cpldikti" method="get">
+                      @csrf
+                      <div class="row mb-3">
+                        <div class="col-sm-3">
+                          <label for="" class="form-label">Kategori</label>
+                          <div class="d-flex align-items-center">
+                          <select name="kategori_cpl" class="form-select" style="margin-right: 7pt; height:100%">
+                            <option value="Sikap (S)" selected="{{isset($_GET['kategori_cpl']) && $_GET['kategori_cpl'] == 'Sikap (S)'}}">Sikap</option>
+                              <option value="Keterampilan Umum (KU)" selected="{{isset($_GET['kategori_cpl']) && $_GET['kategori_cpl'] == 'Keterampilan Umum (KU)'}}">Keterampilan Umum</option>
+                              <option value="Keterampilan Khusus (KK)" selected="{{isset($_GET['kategori_cpl']) && $_GET['kategori_cpl'] == 'Keterampilan Khusus (KK)'}}">Keterampilan Khusus</option>
+                              <option value="Pengetahuan" selected="{{isset($_GET['kategori_cpl']) && $_GET['kategori_cpl'] == 'Pengetahuan'}}">Pengetahuan</option>
+                          </select>
+                          <button type="submit" class="btn btn-primary" style="height:100%">Search</button>
+                      </div>
+                      </div>
                       <tr class="text-center">
                         <th scope="col">No</th>
                         <th scope="col">CPL SN-Dikti</th>
@@ -40,9 +55,11 @@
                           <td>{{ $dikti->kategori_cpl }}</td>
                           <td>{{ $dikti->deskripsi }}</td>
                           <td>{{ $dikti->created_at->format('D M Y') }}</td>
-                          <td class="text-center">
-                            <a href="/tampilcpldikti/{{ $dikti->id }}" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger delete" data-id="{{ $dikti->id }}">Hapus</a>
+                          <td class="text-center " >
+                            <div class="d-flex" >
+                              <a href="/tampilcpldikti/{{ $dikti->id }}" class="btn btn-warning w-100" style="margin-right:7pt">Edit</a>
+                              <a href="#" class="btn btn-danger delete w-100" data-id="{{ $dikti->id }}">Hapus</a>
+                            </div>
                           </td>
                         </tr>
                       @endforeach
