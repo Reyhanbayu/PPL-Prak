@@ -7,9 +7,16 @@ use Illuminate\Http\Request;
 
 class CplDiktiController extends Controller
 {
-    public function indexDikti(){
-        $data = CplDikti::paginate(5);
-        return view('cpldikti/indexDikti', compact('data'));
+   public function indexDikti(Request $request){
+        
+        $data = CplDikti::query();
+        
+        // filter Kategori
+        $data->when($request->kategori_cpl, function ($query) use ($request) {
+            return $query->wherekategori_cpl($request->kategori_cpl);
+        });
+
+        return view('cpldikti/indexDikti', ['data' => $data->paginate(5)]);
     }
 
     public function tambahcpldikti(){
