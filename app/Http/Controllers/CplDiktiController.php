@@ -17,8 +17,6 @@ class CplDiktiController extends Controller
         });
 
         return view('cpldikti/indexDikti', ['data' => $data->paginate(5)]);
-
-        
     }
 
     public function tambahcpldikti(){
