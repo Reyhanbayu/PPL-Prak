@@ -8,3 +8,30 @@
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;
 }
+
+input[type=username]{
+    
+    border : transparent;
+    height: 50;
+    width: 400;
+    border-bottom: 3px solid bisque;
+}
+
+input[type=password]{
+    
+    border : transparent;
+    height: 50;
+    width: 400;
+    border-bottom: 3px solid bisque;
+}
+
+.loginbutton{
+    background-color:bisque;
+    width: 200;
+    height: 50;
+    font-family: 'Poppins';
+    font-weight: bold;
+    border : none;
+    border-radius:10px;
+
+}

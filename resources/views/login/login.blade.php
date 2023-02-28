@@ -17,51 +17,47 @@
     </div>
 
 <div style="padding-left:1200px;padding-top:200px">
-<div style="font-weight:bold;font-size:25px;font-family:'Poppins">
+<div style="font-weight:bold;font-size:25px;font-family:'Poppins';padding-left:150px;">
     LOGIN
 
 </div>
 
-<div style="font-size:17px;padding-top:10px;font-family:'Poppins">
-    Silakan isi data akun yang telah terdaftar <br> sebelumnya
 
-</div>
 
 <div style="font-family:Poppins;padding-top:20px;">
 <form action ="/login" method="post">
     @csrf
-    <label for="email"><b>Email</b></label>
+    
 
     <br>
-    <input type="email" id="email" name="email" placeholder="contoh@gmail.com">
+    <input type="username" id="username" name="username" placeholder=" Username " style="font-size:20;padding:20px;">
 
-    @error('email')
+    @error('username')
     <div class="invalid-feedback">
         {{$message}}
 
     </div>
 @enderror
     <p>
-    
-    <label for="password"><b>Password</b></label>
+   
 
     
 
     <br>
-    <input type="password" id="password" name="password" placeholder="Password">
+    <input type="password" id="password" name="password" placeholder=" Password " style="font-size:20;padding:20px;">
     @error('password')
     <div class="invalid-feedback">
         {{$message}}
     </div>
 @enderror  
     <p>
-    <input type="submit" value="Masuk">
+    <div style="padding-left:90px;padding-top:50px;">
+        <input type="submit" value="LOGIN" class="loginbutton">
+    </div>
+    
 </form>   
 
-<div style="font-family:'Poppins'">
-Belum mempunyai akun ? 
-<a href="/register"> <b> Daftar Sekarang </b> </a>
-</div>
+
 </div>
 
 </div>
