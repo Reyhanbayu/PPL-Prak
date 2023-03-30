@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CplDiktiController;
+use App\Http\Controllers\PemetaanController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -30,3 +31,5 @@ Route::get('/tampilcpldikti/{id}',[CplDIktiController::class, 'tampilcpldikti'])
 Route::post('/updatecpldikti/{id}',[CplDIktiController::class, 'updatecpldikti'])->name('updatecpldikti');
 
 Route::get('/delete/{id}',[CplDIktiController::class, 'delete'])->name('delete');
+
+Route::get('/pemetaan',[PemetaanController::class, 'indexPemetaan'])->name('indexPemetaan');
