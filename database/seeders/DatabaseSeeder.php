@@ -55,6 +55,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         PemetaanCpl::create([
+            'kode_cpl' => 'cpl08',
+            'nama_cpl' => 'Lorem Ipsum'
+        ]);
+
+        PemetaanCpl::create([
             'kode_cpl' => 'cpl09',
             'nama_cpl' => 'Lorem Ipsum'
         ]);
