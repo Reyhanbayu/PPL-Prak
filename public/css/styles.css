@@ -35,3 +35,13 @@ input[type=password]{
     border-radius:10px;
 
 }
+
+.sidebaract{
+    
+}
+
+.sidebaract:active{
+    width:200px;
+    height:100px;
+    background-color:6D798E
+}

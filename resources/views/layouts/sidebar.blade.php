@@ -29,6 +29,10 @@
           font-size: 3.5rem;
         }
       }
+
+      .accordion-body {
+      background-color: $warning;
+}
     </style>
 
     
@@ -96,27 +100,99 @@
   </symbol>
 </svg>
 
-<main>
+<main style="padding:0">
   
-  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;height:960px;position:absolute">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <span class="fs-4">Univ X</span>
+  <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;height:960px;position:absolute;background-color:#272833;color:White;">
+
+    <div style="padding-left:80px;">
+      <img src="{{asset('../images/obe.png')}}">
+
+    </div>
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" style="color:#FFFFFF">
+      <div style="padding-left:75px;padding-top:10px;font-size:22px;">
+        <b> SI - OBE </b>
+
+      </div>
+      
     </a>
+
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
+
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-          CPL SN-DIKTI
+        <a href="#" class="nav-link link-light text-secondary " aria-current="page" style="font-weight:bold;font-size:16px;">
+          <img src="{{asset('../images/write.png')}}" style="padding-right:20px;">
+          CPL
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-          CPL Prodi
+      <li class="nav-item">
+        <a href="#" class="nav-link link-light text-secondary " aria-current="page" style="font-weight:bold;font-size:16px;">
+          <img src="{{asset('../images/notes.png')}}" style="padding-right:20px;">
+          Profil Lulusan
         </a>
-     
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link link-light text-secondary " aria-current="page" style="font-weight:bold;font-size:16px;">
+          <img src="{{asset('../images/college.png')}}" style="padding-right:20px;">
+          CPMK
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link link-light text-secondary " aria-current="page" style="font-weight:bold;font-size:16px;">
+          <img src="{{asset('../images/shell.png')}}" style="padding-right:20px;">
+          Mata Kuliah
+        </a>
+      </li>
+      <hr> 
+      <li>
+        <div class="accordion accordion-flush panel-primary" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-weight:bold;background-color:#272833">
+                <img src="{{asset('../images/brain.png')}}" style="padding-right:20px;">
+                Pemetaan
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="background-color:#272833">
+              <div class="accordion-body bg-transparent">
+                <a href="#" class="nav-link link-light text-light {{Request::is('/cplbk*') ? 'active' : ''}}" aria-current="page" style="font-weight:bold;padding-left:60px;">
+                  CPL-BK
+                </a>
+                <a href="#" class="nav-link link-light text-light {{Request::is('/bkmk*') ? 'active' : ''}}" aria-current="page" style="font-weight:bold;padding-left:60px;">
+                  BK-MK
+                </a>
+                <a href="/pemetaan" class="sidebaract nav-link link-light text-light {{Request::is('/cpldikti*') ? 'active' : ''}}" aria-current="page" style="font-weight:bold;padding-left:60px;">
+                  CPL-BK-MK
+                </a>
+              </div>
+            </div>
+          </div>
+      
+      </li>
     </ul>
-    <hr>
+    <div style="position:absolute;top:95%;left:0;background-color:#070918;width:280px;height:50px;margin:0;">
+      <div class="container">
+        <div class="row" style="padding-top:10px;">
+          <div class="col" style="padding-left:20px;">
+            <img src="{{asset('../images/people.png')}}" style="">
+          </div>
+          <div class="col" style="padding-left:20px;">
+            <img src="{{asset('../images/mail.png')}}" style="">
+          </div>
+          <div class="col" style="padding-left:20px;">
+            <img src="{{asset('../images/settings.png')}}" style="">
+          </div>
+          <div class="col" style="padding-left:20px;">
+            <img src="{{asset('../images/logout.png')}}" style="">
+          </div>
+          
+          
+          
+        </div>
+        
+      </div>
+      
+    </div>
+   
     
   </div>

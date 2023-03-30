@@ -1,47 +1,70 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('container')
+
+
+
     <title>SI OBE Kurikulum</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
-        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-    <h2 class="text-center mb-5 mt-5">Data Pemetaan CPL-BK-MK</h2>
-
     <div class="container">
-        <table class="table table-hover rounded">
-            <thead class="table-secondary">
-                <tr class="text-center">
-                    <th scope="col"></th>
-                    @foreach ($data2 as $bk)
-                        <th scope="col">{{ $bk->kode_bk }}</th>
-                    @endforeach
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($data1 as $cpl)
-                    <tr class="text-center">
-                        <th scope="row">{{ $cpl->kode_cpl }}</th>
-                        @foreach ($data2 as $bk)
-                            <td>
-                                @if ($data4->where('kode_bk', $bk->kode_bk)->where('kode_cpl', $cpl->kode_cpl)->count() != 0)
-                                    @foreach ($data3->where('kode_bk', $bk->kode_bk) as $pemetaanbkmk)
-                                        {{ $pemetaanbkmk->kode_mk }}
-                                    @endforeach
-                                @endif
-                            </td>
+        <div class="row">
+            <div style="display:flex">
+                <div style="padding-top:30px;color:white;font-size:26px;font-weight:bold;">
+                    CPL-BK-MK
+                </div>
+                
+            
+            
+                
+                <div style="padding-top:30px;padding-left:900px;color:white;font-size:26px;font-weight:bold;color:rgb(138, 138, 138)">
+                    CPL-BK-MK / Data
+                    
+                </div>
+            </div>
+               
+            </div>
+        
+        
+        
+    <div class="row">
+        <div class="card mt-5" style="padding: 2rem">
+            <div class="card-body" >
+            
+    
+            <div class="container">
+                <table class="table table-hover rounded">
+                    <thead class="table-secondary">
+                        <tr class="text-center">
+                            <th scope="col"></th>
+                            @foreach ($data2 as $bk)
+                                <th scope="col">{{ $bk->kode_bk }}</th>
+                            @endforeach
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data1 as $cpl)
+                            <tr class="text-center">
+                                <th scope="row">{{ $cpl->kode_cpl }}</th>
+                                @foreach ($data2 as $bk)
+                                    <td>
+                                        @if ($data4->where('kode_bk', $bk->kode_bk)->where('kode_cpl', $cpl->kode_cpl)->count() != 0)
+                                            @foreach ($data3->where('kode_bk', $bk->kode_bk) as $pemetaanbkmk)
+                                                {{ $pemetaanbkmk->kode_mk }}
+                                            @endforeach
+                                        @endif
+                                    </td>
+                                @endforeach
+                            </tr>
                         @endforeach
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        </div>
 
-</html>
+    </div>
+    </div>
+       
+   
+
+@endsection

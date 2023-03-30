@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
-  <body>
     <h2 class="text-center mb-5 mt-5">Data CPL SN-DIKTI</h2>
-
+    @if (session('success'))
+    
+    @endif
     <div class="container">
         <a href="/tambahcpldikti" class="btn btn-primary mb-3">Tambah +</a>
         <div class="card">
@@ -78,9 +79,6 @@
           </div>
         </div>
     </div>
-
-  
-  </body>
   <script>
 
     $('.delete').click(function(){
