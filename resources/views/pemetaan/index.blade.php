@@ -31,7 +31,7 @@
             
     
             <div class="container">
-                <table class="table table-hover rounded">
+                <table class="table table-hover rounded table-bordered mb-0">
                     <thead class="table-secondary">
                         <tr class="text-center">
                             <th scope="col"></th>
