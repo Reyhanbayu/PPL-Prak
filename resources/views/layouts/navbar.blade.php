@@ -7,7 +7,7 @@
                 <div class="col">
                     <div style="font-size:22px;font-weight:bold;">
     
-                        Form Pemetaan
+                        Pemetaan
                     </div>
                     
                     <div style="font-weight:bold;color:#b1b1b1;padding-top:5px;">
