@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
+
     <h2 class="text-center mb-5 mt-5">Data CPL SN-DIKTI</h2>
     @if (session('success'))
     

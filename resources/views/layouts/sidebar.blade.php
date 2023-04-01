@@ -120,7 +120,7 @@
     <ul class="nav nav-pills flex-column mb-auto">
 
       <li class="nav-item">
-        <a href="#" class="nav-link link-light text-secondary " aria-current="page" style="font-weight:bold;font-size:16px;">
+        <a href="/cpldikti" class="nav-link link-light text-secondary " aria-current="page" style="font-weight:bold;font-size:16px;">
           <img src="{{asset('../images/write.png')}}" style="padding-right:20px;">
           CPL
         </a>
