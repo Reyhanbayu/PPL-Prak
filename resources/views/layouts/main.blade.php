@@ -41,22 +41,32 @@
 
  
   
-    <div class="row">
+    <div class="row" style="position:fixed">
       
+      <div style="margin-left:0;z-index:100;">
+        @include('layouts.sidebar')
+      </div>
 
-      @include('layouts.sidebar')
+      <div style="position:fixed;width:100%;z-index:10">
+        @include('layouts.navbar')
+      </div>
 
       <body class="bg-dark">
+        
 
-        @include('layouts.navbar')
+        
         
       <div class="col">
         
       </div>
 
-      <main class="ms-sm-auto col-lg-10"style="border-radius:30px;">
+      <main class="ms-sm-auto col-lg-10"style="border-radius:30px;padding-top:100px;">
+
+        <div style="position:relative;z-index:-1;padding-bottom:100px;">
+          @yield('container')
+        </div>
         
-            @yield('container')
+            
          
       
       </main>
